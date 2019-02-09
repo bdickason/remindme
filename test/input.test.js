@@ -1,18 +1,18 @@
 import test from 'ava'
 
-import getInput from '../src/input.js'
+import {getInput, parseArgs} from '../src/input.js'
 
 
 test('Input: Empty Input', t => {
-  const argv = ['/bin/node']
-  const _input = []
+  const argv = ['/bin/node', './blah.js']
+  const _input = null
 
   let input = getInput(argv)
-  t.deepEqual(_input, input)
+  t.is(_input, input)
 })
 
 test('Input: No Message/Time Set', t => {
-  const argv = ['/bin/node', '1']
+  const argv = ['/bin/node', './blah.js', '1']
   const _input = ['1']
 
   let input = getInput(argv)
@@ -20,7 +20,7 @@ test('Input: No Message/Time Set', t => {
 })
 
 test('Input: Message set but no time', t => {
-  const argv = ['/bin/node', 'Booth get a new corporate card']
+  const argv = ['/bin/node', './blah.js', 'Booth get a new corporate card']
   const _input = ['Booth', 'get', 'a', 'new', 'corporate', 'card']
 
   let input = getInput(argv)
