@@ -5,4 +5,4 @@ import main from './src/main.js'
 
 // module.exports = require('./src/main.js')(process.argv)
 
-main(process.argv)
+main()

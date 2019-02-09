@@ -1,12 +1,12 @@
 
 const chalk = require("chalk");
-import getArgs from './args'
+import getInput from './input'
 
-export default function main (argv) {
+export default function main () {
   // Input: Array of parameters via command line (process.argv)
   // Example: ['/blah/blah', 'internet']
 
-  const input = getArgs(argv)
+  const input = getInput(process,argv)
 
   if(input) {
     console.log(

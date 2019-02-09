@@ -3,9 +3,9 @@
   "description": "Reminders as a service",
   "scripts": {
     "start": "node ./dist/main.js",
-    "build": "./node_modules/.bin/webpack",
-    "dev": "./node_modules/.bin/webpack -d -w",
-    "test": "ava test/main.test.js -w"
+    "build": "npx webpack",
+    "dev": "npx webpack -d -w",
+    "test": "npx ava -w"
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
@@ -27,6 +27,13 @@
     "require": [
       "@babel/register",
       "@babel/polyfill"
+    ],
+    "files": [
+      "test/**/*.test.js"
+    ],
+    "sources": [
+      "src/**/*.js",
+      "test/**/*.test.js"
     ]
   }
 }
